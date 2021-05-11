@@ -14,6 +14,10 @@ namespace IndianStateCensusAnalyser.DTO
         private long population;
         private long area;
         private long density;
+        private int serialNumber;
+        private string stateName;
+        private int tin;
+        private string stateCode;
 
         /// <summary>
         /// Creating CensusDTO constructor and passing CensusDataDAO as object.
@@ -27,6 +31,18 @@ namespace IndianStateCensusAnalyser.DTO
             this.population = censusDataDao.population;
             this.area = censusDataDao.area;
             this.density = censusDataDao.density;
+        }
+
+        /// <summary>
+        /// Creating CensusDTO constructor and passing StateCodeDAO as object.
+        /// </summary>
+        /// <param name="stateCodeDao"></param>
+        public CensusDTO(StateCodeDAO stateCodeDao)
+        {
+            this.serialNumber = stateCodeDao.serialNumber;
+            this.stateName = stateCodeDao.stateName;
+            this.tin = stateCodeDao.tin;
+            this.stateCode = stateCodeDao.stateCode;
         }
     }
 }
